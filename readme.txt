@@ -1,0 +1,1 @@
+This is a python work to find out the bull player`s name and winrate.
