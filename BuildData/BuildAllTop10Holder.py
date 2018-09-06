@@ -9,7 +9,12 @@ pro = ts.pro_api()
 stockList = '../Data/stockList.csv'
 a = pd.read_csv(stockList, encoding='utf-8')
 
-print(a['ts_code'])
+# print(a['ts_code'])
 
+count = 0
 for this_ts_code in a['ts_code']:
-    print(this_ts_code)
+    count = count + 1
+    df = pro.top10_holders(ts_code=this_ts_code,start_date='20170101', end_date='20171231')
+    print(df.to_csv('../Data/stockHolder.csv'))
+    if count > 3:
+        break
