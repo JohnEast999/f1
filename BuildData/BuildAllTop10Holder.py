@@ -18,7 +18,7 @@ for this_ts_code in a['ts_code']:
 
     df = pro.top10_holders(ts_code=this_ts_code,start_date='20170101', end_date='20171231')
 
-    if count == 1 :
+    if count == 1:
         df.to_csv('../Data/stockHolder.csv')
     else:
         df.to_csv('../Data/stockHolder.csv', mode='a', header=None)
